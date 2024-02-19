@@ -1,29 +1,56 @@
 <template>
-    <div>hello {{ name }}</div>
+    <h1>Login</h1>
+    <form @submit.prevent="login">
+        <input type="email" v-model="email" placeholder="email">
+        <input type="password" v-model="password" placeholder="password">
+        <button type="submit">Login</button>
+    </form>
 </template>
 <script setup>
-    import axios from 'axios';
+    import Cookies from 'js-cookie';
     
-    axios.defaults.withCredentials = true;
-    axios.defaults.withXSRFToken = true;
-    axios.defaults.baseURL = 'http://localhost:8080';
+    const email = ref('');
+    const password = ref('');
+    const authenticated = ref(false);
 
-    const name = ref(null);
+    const { $apiFetch } = useNuxtApp();
 
-    onMounted(() => {
-        axios.get('/sanctum/csrf-cookie').then(csrf => {
-            axios.post('/login', {
-                email: 'boudewijn+11@hellodata.nl',
-                password: '1234567890'
-            }).then(() => {
-                axios.get('/api/user').then(response => {
-                    name.value = response.data.user.name;
-                }).catch(error => {
-                    console.log('user error', error);
-                });
-            }).catch(error => {
-                console.log('login error', error);
-            })
+    async function login() {
+        if (!email.value || !password.value) {
+            return;
+        }
+
+        await $apiFetch('/sanctum/csrf-cookie', {
+            method: 'get'
         });
-    });
+
+        await $apiFetch('/login', {
+            method: 'post',
+            body: {
+                email: email.value,
+                password: password.value
+            },
+            headers: {
+                'Accept': 'application/json',
+                'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+            }
+        }).catch(error => {
+            console.log('login error', error);
+        })
+    }
+
+    async function logout() {
+        await $apiFetch('/logout', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+            }
+        }).then(() => {
+            userLoggedOut();
+        }).catch(error => {
+            console.log('logout error', error);
+        });
+    }
+
 </script>
