@@ -26,6 +26,7 @@
             }
         });
 
+        console.log(Cookies.get('XSRF-TOKEN'));
         console.log('login', email.value, password.value);
 
         await $apiFetch('/login', {
