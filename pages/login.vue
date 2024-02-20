@@ -11,7 +11,6 @@
     
     const email = ref('');
     const password = ref('');
-    const authenticated = ref(false);
 
     const { $apiFetch } = useNuxtApp();
 
@@ -37,20 +36,6 @@
         }).catch(error => {
             console.log('login error', error);
         })
-    }
-
-    async function logout() {
-        await $apiFetch('/logout', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
-            }
-        }).then(() => {
-            userLoggedOut();
-        }).catch(error => {
-            console.log('logout error', error);
-        });
     }
 
 </script>
