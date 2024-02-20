@@ -6,7 +6,7 @@ export default defineNuxtPlugin(nuxtApp => {
     nuxtApp.provide(
         'apiFetch', 
         $fetch.create({
-            baseURL: 'http://localhost:8080',
+            baseURL: config.public.apiBaseUrl,
             credentials: 'include'
         })
     )
