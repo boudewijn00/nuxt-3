@@ -1,7 +1,8 @@
 import { defineNuxtPlugin } from "#app";
 
 export default defineNuxtPlugin(nuxtApp => {
-    const config = nuxtApp.$config
+    const config = useRuntimeConfig();
+    console.log('API base URL:', config.public.apiBaseUrl);
     
     nuxtApp.provide(
         'apiFetch', 

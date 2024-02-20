@@ -3,6 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
-      apiBaseUrl: 'http://localhost',
+      apiBaseUrl: process.env.API_BASE_URL
     }
   }})
