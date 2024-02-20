@@ -20,7 +20,10 @@
         }
 
         await $apiFetch('/sanctum/csrf-cookie', {
-            method: 'get'
+            method: 'get',
+            headers: {
+                'Accept': 'application/json',
+            }
         });
 
         await $apiFetch('/login', {
