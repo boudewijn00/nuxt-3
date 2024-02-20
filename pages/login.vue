@@ -26,6 +26,8 @@
             }
         });
 
+        console.log('login', email.value, password.value);
+
         await $apiFetch('/login', {
             method: 'post',
             body: {
