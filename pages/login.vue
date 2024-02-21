@@ -4,8 +4,8 @@
         <li v-for="error in errors" :key="error">{{ error }}</li>
     </ul>
     <form @submit.prevent="login">
-        <input type="email" v-model="email" placeholder="email">
-        <input type="password" v-model="password" placeholder="password">
+        <input type="email" v-model="email" placeholder="email" />
+        <input type="password" v-model="password" placeholder="password" />
         <button type="submit">Login</button>
     </form>
 </template>
