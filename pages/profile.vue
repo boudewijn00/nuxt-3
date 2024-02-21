@@ -1,5 +1,5 @@
 <template>
-    <div>hello {{ user?.name }}</div>
+    <div v-if="user?.name">hello {{ user?.name }}</div>
     <button @click="logout">Logout</button>
 </template>
 <script setup>
