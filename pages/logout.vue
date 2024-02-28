@@ -6,16 +6,22 @@
     import Cookies from 'js-cookie';
     
     const { $apiFetch } = useNuxtApp();
+    const { removeUser } = useAuth();
     
     async function logout() {
-        await $apiFetch('/logout', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
-            }
-        }).catch(error => {
+        try {
+            await $apiFetch('/logout', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+                }
+            })
+        } catch (error) {
             console.log('logout error', error);
-        });
+        } finally {
+            removeUser();
+            window.location.href = '/login';
+        }
     }
 </script>

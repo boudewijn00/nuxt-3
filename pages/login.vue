@@ -10,6 +10,10 @@
     </form>
 </template>
 <script setup>
+    definePageMeta({
+        middleware: ['guest']
+    });
+
     import Cookies from 'js-cookie';
     
     const email = ref('');
@@ -17,6 +21,7 @@
     const errors = ref([]);
 
     const { $apiFetch } = useNuxtApp();
+    const { setUser } = useAuth();
 
     async function login() {
         await $apiFetch('/sanctum/csrf-cookie', {
@@ -39,6 +44,14 @@
                 }
             })
 
+            const response = await $apiFetch('/api/user', {
+                method: 'get',
+                headers: {
+                    'Accept': 'application/json',
+                    'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+            }});
+
+            setUser(response.user.name);
             window.location.href = '/profile';
         } catch (error) {
             console.log('login error', error.data.errors);

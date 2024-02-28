@@ -3,9 +3,14 @@
     <button @click="logout">Logout</button>
 </template>
 <script setup>
+    definePageMeta({
+        middleware: ['auth']
+    });
+
     import Cookies from 'js-cookie';
 
     const { $apiFetch } = useNuxtApp();
+    const { removeUser } = useAuth();
     const user = ref(null);
     
     onMounted(async() => {
@@ -27,16 +32,19 @@
     }
 
     async function logout() {
-        await $apiFetch('/logout', {
-            method: 'post',
-            headers: {
-                'Accept': 'application/json',
-                'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
-            }
-        }).catch(error => {
+        try {
+            await $apiFetch('/logout', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+                }
+            })
+        } catch (error) {
             console.log('logout error', error);
-        });
-
-        window.location.href = '/login';
+        } finally {
+            removeUser();
+            window.location.href = '/login';
+        }
     }
 </script>
