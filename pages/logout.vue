@@ -17,7 +17,7 @@
             console.log('logout error', error);
         } finally {
             removeUser();
-            window.location.href = '/login';
+            window.location.href = '/';
         }
     });
 </script>

@@ -3,6 +3,6 @@ export default defineNuxtRouteMiddleware((to, from) => {
     console.log('auth middleware', isLoggedIn.value)
 
     if(process.client && !isLoggedIn.value) {
-        window.location.href = '/login'
+        window.location.href = '/'
     }
 })
