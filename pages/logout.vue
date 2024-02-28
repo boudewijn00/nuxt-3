@@ -1,14 +1,10 @@
-<template>
-    <h1>Logout</h1>
-    <button @click="logout">Logout</button>
-</template>
 <script setup>
     import Cookies from 'js-cookie';
     
     const { $apiFetch } = useNuxtApp();
     const { removeUser } = useAuth();
     
-    async function logout() {
+    onMounted(async() => {
         try {
             await $apiFetch('/logout', {
                 method: 'post',
@@ -23,5 +19,5 @@
             removeUser();
             window.location.href = '/login';
         }
-    }
+    });
 </script>

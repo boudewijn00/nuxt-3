@@ -1,6 +1,5 @@
 <template>
-    <div v-if="user?.name">hello {{ user?.name }}</div>
-    <button @click="logout">Logout</button>
+    <div v-if="user?.name"><p>hello {{ user?.name }}</p></div>
 </template>
 <script setup>
     definePageMeta({
@@ -10,7 +9,6 @@
     import Cookies from 'js-cookie';
 
     const { $apiFetch } = useNuxtApp();
-    const { removeUser } = useAuth();
     const user = ref(null);
     
     onMounted(async() => {
@@ -29,22 +27,5 @@
         }).catch(error => {
             console.log('getUser error', error);
         });
-    }
-
-    async function logout() {
-        try {
-            await $apiFetch('/logout', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
-                }
-            })
-        } catch (error) {
-            console.log('logout error', error);
-        } finally {
-            removeUser();
-            window.location.href = '/login';
-        }
     }
 </script>

@@ -1,12 +1,11 @@
 <template>
-    <h1>Login</h1>
-    <ul>
-        <li v-for="error in errors" :key="error">{{ error }}</li>
-    </ul>
     <form @submit.prevent="login">
-        <input type="email" v-model="email" placeholder="email" />
-        <input type="password" v-model="password" placeholder="password" />
-        <button type="submit">Login</button>
+        <InputText type="email" v-model="email" placeholder="email" />
+        <InputText type="password" v-model="password" placeholder="password" />
+        <Button label="login" icon="pi pi-check" type="submit" />
+        <ul class="login-errors">
+            <li style="color: var(--red-600)" v-for="error in errors" :key="error">{{ error }}</li>
+        </ul>
     </form>
 </template>
 <script setup>
