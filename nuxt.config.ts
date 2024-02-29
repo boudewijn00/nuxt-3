@@ -10,7 +10,10 @@ export default defineNuxtConfig({
       exclude: ["Editor", "Chart"]
     }
   },
-  css: ["primevue/resources/themes/lara-dark-amber/theme.css"],
+  css: [
+    "primevue/resources/themes/lara-dark-amber/theme.css",
+    "primeicons/primeicons.css"
+  ],
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.API_BASE_URL

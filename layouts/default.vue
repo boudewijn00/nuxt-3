@@ -1,16 +1,18 @@
 <template>
     <client-only>
-        <Toolbar v-if="isLoggedIn">
-        <template #start>
-            <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-16" />
-            <p class="text-lg ml-2">hello {{ user?.name }}</p>
-        </template>
-        <template #end>
-            <Badge value="2" class="mr-2"></Badge>
-            <NuxtLink to="/logout"><Button class="text-sm h-5" label="Logout" /></NuxtLink>
+        <div v-if="isLoggedIn">
+            <Toolbar>
+            <template #start>
+                <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-16" />
+                <p class="text-lg ml-2">hello {{ user?.name }}</p>
             </template>
-        </Toolbar>
-        <div class="flex items-center justify-center">
+            <template #end>
+                <NuxtLink to="/logout"><Button class="text-sm h-5" label="Logout" /></NuxtLink>
+                <Badge value="2" class="ml-2"></Badge>
+                </template>
+            </Toolbar>
+        </div>
+        <div class="flex items-center justify-content-center">
             <slot></slot>
         </div>   
     </client-only> 
