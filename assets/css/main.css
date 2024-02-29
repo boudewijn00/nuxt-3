@@ -6,9 +6,16 @@
 }
 
 form input, form button {
-    margin: 5px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
 }
 
 nav button {
     margin: 5px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }

@@ -1,17 +1,21 @@
 <template>
     <client-only>
-        <div>
-            <form @submit.prevent="login">
-                <InputText type="text" v-model="email" placeholder="email" />
-                <InputText type="password" v-model="password" placeholder="password" />
-                <Button type="submit">Login</Button>
-            </form>
-            <div v-if="errors.length" class="flex-item">
-                <ul>
-                    <li v-for="error in errors" :key="error">{{ error }}</li>
-                </ul>
-            </div>
-        </div>
+        <Card>
+            <template #content>
+                <h3>login</h3>
+                <form @submit.prevent="login">
+                    <InputText type="text" v-model="email" placeholder="email" />
+                    <InputText type="password" v-model="password" placeholder="password" />
+                    <Button type="submit">Login</Button>
+                </form>
+                    
+            </template>
+            <template #footer>
+                <ul v-if="errors.length">
+                        <li v-for="error in errors" :key="error">{{ error }}</li>
+                    </ul>
+            </template>
+        </Card>
     </client-only>
 </template>
 <script setup>
