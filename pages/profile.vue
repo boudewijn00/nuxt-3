@@ -1,5 +1,5 @@
 <template>
-    <div class="max-w-4xl p-10">
+    <div class="max-w-4xl p-5">
         <Accordion :activeIndex="0">
             <AccordionTab header="Header I">
                 <p class="m-0">
