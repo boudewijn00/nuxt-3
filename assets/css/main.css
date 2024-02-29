@@ -3,6 +3,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+}
+
+.container div {
+    max-width: 1024px;
 }
 
 form input, form button {

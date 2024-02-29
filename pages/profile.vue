@@ -1,6 +1,6 @@
 <template>
-    <div class="flex-item">
-        <h3 v-if="user?.name">Hello {{ user?.name }}</h3>
+    <div v-if="user?.name">
+        <h3>Hello {{ user?.name }}</h3>
         <Accordion :activeIndex="0">
             <AccordionTab header="Header I">
                 <p class="m-0">
