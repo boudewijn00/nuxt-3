@@ -1,7 +1,7 @@
 <template>
-    <div class="p-5 flex flex-col md:flex-row">
+    <div class="p-5 flex flex-col md:flex-row w-full md:max-w-4xl">
         <Menu :model="items" class="mb-4 md:mr-4 md:mb-0" />
-        <Accordion :activeIndex="0" class="min-w-4xl max-w-4xl">
+        <Accordion :activeIndex="0" class="w-full">
             <AccordionTab header="header one">
                 <p class="m-0">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
