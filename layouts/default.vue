@@ -2,18 +2,44 @@
     <client-only>
         <Toolbar v-if="isLoggedIn">
         <template #start>
-            <NuxtLink to="/logout"><Button label="Logout" /></NuxtLink>
+            <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-16" />
+            <p class="text-lg ml-2">hello {{ user?.name }}</p>
         </template>
         <template #end>
-            <Badge value="2"></Badge>
+            <Badge value="2" class="mr-2"></Badge>
+            <NuxtLink to="/logout"><Button class="text-sm h-5" label="Logout" /></NuxtLink>
             </template>
         </Toolbar>
-        <div class="container">
+        <div class="flex items-center justify-center">
             <slot></slot>
         </div>   
     </client-only> 
 </template>
 <script setup>
-    import 'primevue/resources/themes/aura-light-green/theme.css'
     const { isLoggedIn } = useAuth();
+
+    import Cookies from 'js-cookie';
+
+    const { $apiFetch } = useNuxtApp();
+    const user = ref(null);
+    
+    onMounted(async() => {
+        if (isLoggedIn){
+            await getUser();
+        }
+    });
+
+    async function getUser() {
+        await $apiFetch('/api/user', {
+            method: 'get',
+            headers: {
+                'Accept': 'application/json',
+                'X-XSRF-TOKEN': Cookies.get('XSRF-TOKEN'),
+            }
+        }).then(response => {
+            user.value = response.user;
+        }).catch(error => {
+            console.log('getUser error', error);
+        });
+    }
 </script>

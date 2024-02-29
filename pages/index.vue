@@ -1,16 +1,15 @@
 <template>
-    <Card>
+    <Card class="max-w-sm mt-10">
         <template #content>
-            <h3>login</h3>
+            <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-32 m-auto" />
             <form @submit.prevent="login">
-                <InputText type="text" v-model="email" placeholder="email" />
-                <InputText type="password" v-model="password" placeholder="password" />
-                <Button type="submit">Login</Button>
-            </form>
-                
+                <InputText type="text" class="text-sm h-10 m-2 w-full" v-model="email" placeholder="email" />
+                <InputText type="password" class="text-sm h-10 m-2 w-full" v-model="password" placeholder="password" />
+                <Button type="submit" class="text-sm h-8 m-2 w-full">login</Button>
+            </form>      
         </template>
         <template #footer>
-            <ul v-if="errors.length">
+            <ul v-if="errors.length" class="mx-4 mt-0 text-amber-700 lowercase">
                 <li v-for="error in errors" :key="error">{{ error }}</li>
             </ul>
         </template>
