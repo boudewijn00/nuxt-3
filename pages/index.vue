@@ -1,5 +1,6 @@
 <template>
-    <Card class="max-w-sm mt-10">
+    <div class="flex justify-center ">
+    <Card class="max-w-sm mt-10 bg-gray-500">
         <template #content>
             <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-32 m-auto" />
             <form @submit.prevent="login">
@@ -14,6 +15,7 @@
             </ul>
         </template>
     </Card>
+    </div>
 </template>
 <script setup>
     definePageMeta({
