@@ -1,12 +1,18 @@
 <template>
-    <form @submit.prevent="login">
-        <input type="email" v-model="email" placeholder="email" />
-        <input type="password" v-model="password" placeholder="password" />
-        <button type="submit">Login</button>
-        <ul class="login-errors">
-            <li style="color: red" v-for="error in errors" :key="error">{{ error }}</li>
-        </ul>
-    </form>
+    <client-only>
+        <div>
+            <form @submit.prevent="login">
+                <input type="email" v-model="email" placeholder="email" />
+                <input type="password" v-model="password" placeholder="password" />
+                <button type="submit">Login</button>
+            </form>
+            <div v-if="errors.length" class="flex-item">
+                <ul>
+                    <li v-for="error in errors" :key="error">{{ error }}</li>
+                </ul>
+            </div>
+        </div>
+    </client-only>
 </template>
 <script setup>
     definePageMeta({
