@@ -12,8 +12,8 @@
             </template>
             <template #footer>
                 <ul v-if="errors.length">
-                        <li v-for="error in errors" :key="error">{{ error }}</li>
-                    </ul>
+                    <li v-for="error in errors" :key="error">{{ error }}</li>
+                </ul>
             </template>
         </Card>
     </client-only>
