@@ -12,7 +12,7 @@
                 </template>
             </Toolbar>
         </div>
-        <div class="flex items-center justify-content-center">
+        <div class="flex items-center justify-center">
             <slot></slot>
         </div>   
     </client-only> 
