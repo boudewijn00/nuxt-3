@@ -15,7 +15,15 @@ nav button {
     margin: 5px;
 }
 
+h3 {
+    text-align: center;
+}
+
 ul {
     list-style: none;
     padding: 0;
+}
+
+.flex-item {
+    max-width: 1000px;
 }

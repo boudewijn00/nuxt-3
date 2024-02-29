@@ -1,5 +1,6 @@
 <template>
-    <div v-if="user?.name"><p>hello {{ user?.name }}</p></div>
+    <div class="flex-item">
+    <h3 v-if="user?.name">Hello {{ user?.name }}</h3>
     <Accordion :activeIndex="0">
     <AccordionTab header="Header I">
         <p class="m-0">
@@ -21,7 +22,7 @@
         </p>
     </AccordionTab>
     </Accordion>
-    
+    </div>
 </template>
 <script setup>
     definePageMeta({
