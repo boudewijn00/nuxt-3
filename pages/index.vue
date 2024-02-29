@@ -2,9 +2,9 @@
     <client-only>
         <div>
             <form @submit.prevent="login">
-                <input type="email" v-model="email" placeholder="email" />
-                <input type="password" v-model="password" placeholder="password" />
-                <button type="submit">Login</button>
+                <InputText type="text" v-model="email" placeholder="email" />
+                <InputText type="password" v-model="password" placeholder="password" />
+                <Button type="submit">Login</Button>
             </form>
             <div v-if="errors.length" class="flex-item">
                 <ul>
