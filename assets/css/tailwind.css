@@ -9,6 +9,7 @@
 
 .p-stepper-header {
 padding: 0px;
+overflow: hidden;
 }
 
 .p-stepper-panels {

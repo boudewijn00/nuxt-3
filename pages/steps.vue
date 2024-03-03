@@ -1,6 +1,6 @@
 <template>
     <div class="my-5">
-        <p class="text-xl mb-5">Steps</p>
+        <p class="text-lg mb-5">Steps</p>
         <Stepper linear>
             <StepperPanel header="Header I">
                 <template #content="{ nextCallback }">
