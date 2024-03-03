@@ -4,7 +4,7 @@
         <DataView :value="products">
             <template #list="slotProps">
                 <div v-for="(item, index) in slotProps.items" :key="index" class="col-12">
-                    <div class="flex flex-column sm:flex-row sm:align-items-center py-4 md:gap-2" :class="{ 'border-top-1 surface-border': index !== 0 }">
+                    <div class="flex flex-column sm:flex-row sm:align-items-center py-4 gap-2" :class="{ 'border-top-1 surface-border': index !== 0 }">
                         <div class="relative">
                             <img class="md:block sm:hidden mx-auto border-round w-full" :src="`https://primefaces.org/cdn/primevue/images/product/${item.image}`" :alt="item.name" />
                         </div>
