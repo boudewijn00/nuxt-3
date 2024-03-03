@@ -1,16 +1,16 @@
 <template>
     <div class="flex justify-center ">
-    <Card class="max-w-sm mt-10 bg-gray-500">
+    <Card class="max-w-sm mt-10 bg-gray-600">
         <template #content>
             <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-32 m-auto" />
             <form @submit.prevent="login">
-                <InputText type="text" class="text-sm h-10 m-2 w-full" v-model="email" placeholder="email" />
-                <InputText type="password" class="text-sm h-10 m-2 w-full" v-model="password" placeholder="password" />
-                <Button type="submit" class="text-sm h-8 m-2 w-full">login</Button>
+                <InputText type="text" class="text-sm h-10 my-2 w-full" v-model="email" placeholder="email" />
+                <InputText type="password" class="text-sm h-10 my-2 w-full" v-model="password" placeholder="password" />
+                <Button type="submit" class="flex justify-center text-sm h-10 my-2 w-full">login</Button>
             </form>      
         </template>
         <template #footer>
-            <ul v-if="errors.length" class="mx-4 mt-0 text-amber-700 lowercase">
+            <ul v-if="errors.length" class="mx-4 mt-0 text-white lowercase">
                 <li v-for="error in errors" :key="error">{{ error }}</li>
             </ul>
         </template>

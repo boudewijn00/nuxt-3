@@ -12,14 +12,17 @@
                 </template>
             </Toolbar>
         </div>
-        <div class="flex flex-col mx-auto sm:flex-row">
+        <div v-if="isLoggedIn" class="flex flex-col mx-auto sm:flex-row">
             <div class="md:w-2/12 max-w-lg my-5 mx-5">
                 <Menu :model="items" />
             </div>
             <div class="md:w-10/12 max-w-2xl mx-5">
                 <slot></slot>
             </div>
-        </div>   
+        </div>
+        <div v-else>
+            <slot></slot>
+        </div>
     </client-only> 
 </template>
 <script setup>
