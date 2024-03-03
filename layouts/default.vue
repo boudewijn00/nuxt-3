@@ -7,13 +7,18 @@
                 <p class="text-lg ml-2 text-white font-semibold">hello {{ user?.name }}</p>
             </template>
             <template #end>
+                <Badge value="2" class="mr-2"></Badge>
                 <NuxtLink to="/logout"><Button class="text-sm h-8" label="Logout" /></NuxtLink>
-                <Badge value="2" class="ml-2"></Badge>
                 </template>
             </Toolbar>
         </div>
-        <div>
-            <slot></slot>
+        <div class="flex flex-col mx-auto sm:flex-row">
+            <div class="md:w-2/12 max-w-lg my-5 mx-5">
+                <Menu :model="items" />
+            </div>
+            <div class="md:w-10/12 max-w-2xl mx-5">
+                <slot></slot>
+            </div>
         </div>   
     </client-only> 
 </template>
@@ -24,6 +29,14 @@
 
     const { $apiFetch } = useNuxtApp();
     const user = ref(null);
+
+    const items = [
+        { label: 'profile', icon: 'pi pi-fw pi-user', command: () => navigateTo('/profile')},
+        { label: 'steps', icon: 'pi pi-fw pi-map', command: () => navigateTo('/steps')},
+        { label: 'upload', icon: 'pi pi-fw pi-upload', command: () => navigateTo('/upload')},
+        { label: 'accordeon', icon: 'pi pi-fw pi-list', command: () => navigateTo('/accordeon')},
+        { label: 'data view', icon: 'pi pi-fw pi-database', command: () => navigateTo('/data')}
+    ];
     
     onMounted(async() => {
         if (isLoggedIn){
