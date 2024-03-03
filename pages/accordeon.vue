@@ -1,5 +1,5 @@
 <template>
-    <div class="m-5">
+    <div class="my-5">
         <p class="text-xl">Accordeon</p>
         <Accordion :activeIndex="0">
             <AccordionTab header="header one">

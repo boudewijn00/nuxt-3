@@ -1,5 +1,5 @@
 <template>
-    <div class="m-5">
+    <div class="my-5">
         <p class="text-xl mb-5">Data</p>
         <DataView :value="products">
             <template #list="slotProps">

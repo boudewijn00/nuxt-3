@@ -1,5 +1,5 @@
 <template>
-    <div class="m-5">
+    <div class="my-5">
         <p class="text-xl mb-5">Profile</p>
         <Fieldset legend="Header">
             <p>
@@ -8,7 +8,7 @@
             </p>
         </Fieldset>
     </div>
-    <div class="m-5">
+    <div class="my-5">
         <MeterGroup :value="value" />
     </div>
 </template>
