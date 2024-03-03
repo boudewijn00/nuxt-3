@@ -1,7 +1,7 @@
 <template>
     <div class="my-5">
         <p class="text-xl mb-5">Steps</p>
-        <Stepper>
+        <Stepper linear>
             <StepperPanel header="Header I">
                 <template #content="{ nextCallback }">
                     <div class="flex flex-column h-12rem">
