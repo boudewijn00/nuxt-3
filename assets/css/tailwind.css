@@ -5,4 +5,13 @@
 @layer tailwind-utilities {
     @tailwind utilities;
     @tailwind variants;
-} 
+}
+
+.p-stepper-header {
+padding: 0px;
+}
+
+.p-stepper-panels {
+padding: 0px;
+padding-top: 20px;
+}
