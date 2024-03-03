@@ -10,6 +10,7 @@
 .p-stepper-header {
 padding: 0px;
 overflow: hidden;
+font-size: 0.85rem;
 }
 
 .p-stepper-panels {
