@@ -2,7 +2,7 @@
     <div class="my-5">
         <p class="text-lg mb-5">Steps</p>
         <Stepper linear>
-            <StepperPanel header="Register">
+            <StepperPanel header="Upload">
                 <template #content="{ nextCallback }">
                     <div class="flex flex-column h-12rem">
                         <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium p-5">
@@ -17,7 +17,7 @@
                     </div>
                 </template>
             </StepperPanel>
-            <StepperPanel header="Upload Products">
+            <StepperPanel header="Select">
                 <template #content="{ prevCallback, nextCallback }">
                     <div class="flex flex-column h-12rem">
                         <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium p-5">
@@ -32,7 +32,7 @@
                     </div>
                 </template>
             </StepperPanel>
-            <StepperPanel header="Select Sellers">
+            <StepperPanel header="View">
                 <template #content="{ prevCallback }">
                     <div class="flex flex-column h-12rem">
                         <div class="border-2 border-dashed surface-border border-round surface-ground flex-auto flex justify-content-center align-items-center font-medium p-5">
