@@ -38,7 +38,8 @@
         { label: 'steps', icon: 'pi pi-fw pi-map', command: () => navigateTo('/steps')},
         { label: 'upload', icon: 'pi pi-fw pi-upload', command: () => navigateTo('/upload')},
         { label: 'accordeon', icon: 'pi pi-fw pi-list', command: () => navigateTo('/accordeon')},
-        { label: 'data view', icon: 'pi pi-fw pi-database', command: () => navigateTo('/data')}
+        { label: 'data view', icon: 'pi pi-fw pi-database', command: () => navigateTo('/data')},
+        { label: 'form', icon: 'pi pi-fw', command: () => navigateTo('/form')}
     ];
     
     onMounted(async() => {
