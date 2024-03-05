@@ -27,7 +27,7 @@
         </div>
         <div class="flex justify-content-center my-5 gap-3">
             <div class="w-2/4">
-                <SelectButton v-model="value" :options="options" aria-labelledby="basic" />
+                <SelectButton v-model="value" :options="options" aria-labelledby="basic" class="text-xs" />
             </div>
             <div class="w-2/4 mt-2">
                 <div class="flex flex-col md:flex-row gap-3">
