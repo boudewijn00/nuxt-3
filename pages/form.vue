@@ -1,5 +1,5 @@
 <template>
-    <div class="my-5">
+    <div class="m-5">
         <div class="card flex flex-col gap-3 md:flex-row">
             <InputGroup>
                 <InputGroupAddon>

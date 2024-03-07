@@ -1,5 +1,5 @@
 <template>
-    <div class="my-5">
+    <div class="m-5">
         <p class="text-xl mb-5">Upload</p>
         <FileUpload name="demo[]" url="/api/upload" @upload="onAdvancedUpload($event)" :multiple="true" accept="image/*" :maxFileSize="1000000">
             <template #empty>

@@ -1,5 +1,5 @@
 <template>
-    <div class="my-5">
+    <div class="m-5">
         <p class="text-lg mb-5">Steps</p>
         <Stepper linear>
             <StepperPanel header="Upload">

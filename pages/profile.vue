@@ -1,9 +1,9 @@
 <template>
-    <div class="my-5">
+    <div class="m-5">
         <p class="text-xl mb-5">Profile</p>
         <MeterGroup :value="value" />
     </div>
-    <div class="my-5">
+    <div class="m-5">
         <Fieldset legend="Header">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
