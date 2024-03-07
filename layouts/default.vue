@@ -16,7 +16,7 @@
             <div class="md:w-2/12 max-w-lg my-5 mx-2">
                 <Menu :model="items" />
             </div>
-            <div class="md:w-10/12 max-w-4xl mx-2 my-5 p-5 border-x border-y">
+            <div class="md:w-10/12 max-w-4xl mx-2 my-5 border-x border-y">
                 <slot></slot>
             </div>
         </div>
