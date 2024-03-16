@@ -3,7 +3,6 @@
         <div v-if="isLoggedIn">
             <Toolbar class="bg-gray-700 rounded-none">
             <template #start>
-                <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-16" />
                 <p class="text-lg ml-2 text-white font-semibold">hello {{ user?.name }}</p>
             </template>
             <template #end>
