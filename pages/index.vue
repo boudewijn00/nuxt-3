@@ -2,7 +2,6 @@
     <div class="flex justify-center ">
     <Card class="max-w-sm mt-10 bg-gray-600">
         <template #content>
-            <img src="~/public/logo.svg" alt="Nuxt Logo" class="h-16 w-32 m-auto" />
             <form @submit.prevent="login">
                 <InputText type="text" class="text-sm h-10 my-2 w-full" v-model="email" placeholder="email" />
                 <InputText type="password" class="text-sm h-10 my-2 w-full" v-model="password" placeholder="password" />
